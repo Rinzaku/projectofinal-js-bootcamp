@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './css/index.css';
+import { App } from './page/App';
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import reportWebVitals from './reportWebVitals';
+
+// const httpLink = new HttpLink({
+//   uri: process.env.REACT_APP_GRAPHQL_URL
+// })
+
+const client = new ApolloClient({
+  uri: process.env.REACT_APP_GRAPHQL_URL,
+  cache: new InMemoryCache()
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
