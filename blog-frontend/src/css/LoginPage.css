@@ -1,0 +1,16 @@
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+  }
+  
+  input[type=text] {
+    background-color: #9476f7;
+    background-position: 9px 10px;
+    background-repeat: no-repeat;
+    padding-left: 50px;  
+  }
+  

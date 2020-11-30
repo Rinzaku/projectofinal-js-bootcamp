@@ -1,3 +1,4 @@
+import '../css/LoginPage.css';
 import { useAuth } from "../hook/authHook"
 import { useLazyQuery } from "@apollo/client";
 import { LOGIN } from "../graphql/queries";
@@ -35,10 +36,14 @@ export const LoginPage = () => {
   return (
     <section>
       <h2>LoginPage view</h2>
-      <input type="text"
-        placeholder="email"
-        onChange={e => setEmail(e.target.value)}
-      />
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text"
+            placeholder="email"
+            onChange={e => setEmail(e.target.value)}
+          />
+        </div>
+      </div>
       <input type="password"
         placeholder="password"
         onChange={e => setPassword(e.target.value)}
